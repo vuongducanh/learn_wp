@@ -1,0 +1,14 @@
+<div class="container">
+    {% set slides = page.get_field('slides') %}
+
+    {% for item in slides %}
+          <img src="{{ item.image.url }}" alt="#">
+          <h1>{{ item.description  }}</h1>
+    {% endfor %}
+
+     {% set file = page.get_field('file_image') %}
+     <h1 class="size">{{ function('get_file_size', file.filesize) }} {{ function('get_file_type_name', file.filename) }}</h1>
+    {% for post in post %}
+        {#{{ post|print_r }}#}
+       <h1> {{ post.title }}</h1>
+       <span>{{ post.con
